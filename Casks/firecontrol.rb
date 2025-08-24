@@ -11,6 +11,6 @@ cask "firecontrol" do
 
   pkg "FireControl-#{version}.pkg"
 
-  uninstall pkgutil: "com.langmuir.cnc.desktop"
+  uninstall pkgutil: "com.langmuir.cnc.desktop.pkg"
 
 end

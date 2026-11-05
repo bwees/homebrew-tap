@@ -1,0 +1,26 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["config:recommended"],
+  semanticCommits: "enabled",
+  customManagers: [
+    {
+      // The tag in the comment tells the digest lookup which release the current
+      // sha256 came from.
+      customType: "regex",
+      managerFilePatterns: ["/^Casks/zulu\\.rb$/"],
+      matchStrings: [
+        '# renovate: tag=(?<currentValue>\\S+)\\n\\s*version "[^"]+"\\n\\s*sha256 "(?<currentDigest>[a-f0-9]{64})"',
+      ],
+      datasourceTemplate: "github-release-attachments",
+      depNameTemplate: "slop-place/zulu",
+      versioningTemplate: "regex:^zulu-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
+      autoReplaceStringTemplate: '# renovate: tag={{{newValue}}}\n  version "{{{replace "zulu-v" "" newValue}}}"\n  sha256 "{{{newDigest}}}"',
+    },
+  ],
+  packageRules: [
+    {
+      matchDepNames: ["slop-place/zulu"],
+      automerge: true,
+    },
+  ],
+}

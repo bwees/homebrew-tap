@@ -9,6 +9,8 @@ cask "firecontrol" do
   desc "Control software for Langmuir plasma cutters"
   homepage "https://www.langmuirsystems.com/downloads"
 
+  depends_on :macos
+
   pkg "FireControl-#{version}.pkg"
 
   uninstall pkgutil: "com.langmuir.cnc.desktop.pkg"

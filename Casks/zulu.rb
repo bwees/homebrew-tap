@@ -1,7 +1,7 @@
 cask "zulu" do
-  # renovate: tag=zulu-v1.23.5
-  version "1.23.5"
-  sha256 "99d31c73839af8469ba8bd8e09c5e801e23bd2f7cccec424d03152b755123498"
+  # renovate: tag=zulu-v1.23.6
+  version "1.23.6"
+  sha256 "63d524bd5765c26b16ccfa76d3806f6bb4517a90d7251f18ea84ffdf6bfb71e1"
 
   url "https://github.com/slop-place/zulu/releases/download/zulu-v#{version}/Zulu.dmg"
   name "Zulu"
